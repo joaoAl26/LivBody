@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'Century Gothic';
+     src: url('/fonts/Century\ Gothic.ttf') format('truetype');
+    }
+    *{
+        font-family: 'Century Gothic';
+        text-align: center;
+    }
+    #head{
+        position: top;
+    }
+    header{
+        background-color: #040562;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    #carrinho{
+        max-width: 900px;
+        margin: 0 auto;
+        padding:0 2%;
+        display: block;
+    }
+    #produtos{
+        max-width: 900px;
+        margin: 0 auto;
+        padding:0 2%;
+        display: flex;
+        justify-content: center;
+        
+    }
+    .produto-single{
+        margin-top: 20px;
+        width: 33.3%;
+        padding: 0 20px;
+        margin-right: 1%;
+        border: 1px solid #dadada;
+    }
+    .produto-single p{
+        font-size: 16px;
+        padding: 10px;
+    }
+    .produto-single a{
+        color: white;
+        background-color: #0077B6 ;
+        display: block;
+        padding: 10px;
+        border-radius: 4px;
+
+        }
+    h2{
+        background-color: #040562;
+        padding: 10px 0;
+        color: white;
+    }
+    .carrinho-bloco{
+        padding: 10px 0;
+        
+    }

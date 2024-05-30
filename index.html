@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liv Body</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="head">
+    <header>
+        <h2>Produtos da Liv Body</h2>
+    </header>
+    </div>
+<br><br><br><br><br>
+
+    <div id="destaque"></div>
+    <div id="produtos">
+    </div>
+
+    <h2>Carrinho</h2>
+    <div id="carrinho" style="top: 0%;">
+         
+    </div>
+
+    <h3>Total</h3>
+    <div id="total">
+
+    </div>
+
+    <script>
+        const items = [
+            {
+                id: 0,
+                nome: 'E-book',
+                img: 'img/ebook.jpg',
+                quantidade: 0,
+                preco: 30.0,
+                total:0
+            }, 
+            {
+                id: 1,
+                nome: 'Cafeína',
+                img: 'img/cafeina.png',
+                quantidade: 0,
+                preco: 35.0,
+                total:0
+
+            },
+            {
+                id: 2,
+                nome: 'Creatina',
+                img: 'img/creatina.png',
+                quantidade: 0,
+                preco: 45.0,
+                total:0
+
+            }, {
+                id: 3,
+                nome: 'Pré-treino',
+                img: 'img/pretreino.png',
+                quantidade: 0,
+                preco: 54.0,
+                total:0
+
+            }, {
+                id: 4,
+                nome: 'Termogênico',
+                img: 'img/termogenico.png',
+                quantidade: 0,
+                preco: 37.45,
+                total:0
+
+            }, {
+                id: 5,
+                nome: 'Whey',
+                img: 'img/whey.png',
+                quantidade: 0,
+                preco: 45.0,
+                total:0
+
+            },  
+        ]
+
+
+        function iniciarLoja(){
+            var containerProdutos = document.getElementById('produtos');
+            items.map((val)=>{
+                console.log(val.nome);
+                containerProdutos.innerHTML+= `
+                <div class="produto-single">
+                    <img src="`+val.img+`" />
+                    <p>`+val.nome+` <br> Preço: R$`+val.preco+` <p> 
+                    <a key="`+val.id+`" href="#">Adicionar ao carrinho</a>
+                    
+                </div>    
+                    `;
+            })
+            
+        }
+        iniciarLoja();
+
+        function atualizarCarrinho(){
+            var containerCarrinho = document.getElementById('carrinho');
+            containerCarrinho.innerHTML="";
+            items.map((val)=>{
+                if(val.quantidade > 0){
+                console.log(val.nome);
+                containerCarrinho.innerHTML+= `
+                <div class="carrinho-bloco">
+                <p style="float:left">Produto: `+val.nome+` </p> 
+                <p style="float:right">  Quantidade: `+val.quantidade+`</p> 
+                <div style="clear:both"></div>
+                <hr> 
+                </div> 
+                  
+                `;
+            }
+            })
+        }
+        function getTotal(){
+            var containerTotal = document.getElementById('total');
+            containerTotal.innerHTML="";
+	        Total[items] = preco[items] * quantidade[items];
+	        quantidade.innerHTML = quantidade[items];
+	        total.innerHTML = total[items];
+	        console.log(quantidade);
+            containerCarrinho.innerHTML+= `
+                <div class="carrinho-bloco">
+                <p style="float:left">Produto: `+val.nome+` </p> 
+                <p style="float:right">  Quantidade: `+val.quantidade+`</p> 
+                <div style="clear:both"></div>
+                <hr> 
+                </div> 
+                  
+                `;
+	        
+            
+}
+
+        var links = document.getElementsByTagName('a');
+
+        for(var i = 0; i < links.length; i++){
+            links[i].addEventListener("click",function(){
+                let key = this.getAttribute('key');
+                items[key].quantidade++;
+                atualizarCarrinho();
+                return false;
+            })
+        }
+
+    </script>
+</body>
+</html>
